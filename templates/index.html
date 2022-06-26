@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict Your chances for Admission</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+<!--            <input type="text" name="type" id="type" placeholder="Type">-->
+            <input type="float" name="Air temperature [K]" id="Air temperature [K]" placeholder="Air temperature [K]">
+            <input type="float" name="Process temperature [K]" id="Process temperature [K]" placeholder="Process temperature [K]">
+            <input type="float" name="Rotational speed [rpm]" id="Rotational speed [rpm]" placeholder="Rotational speed [rpm]">
+            <input type="float" name="Torque [Nm]" id="Torque [Nm]" placeholder="Torque [Nm]">
+            <input type="float" name="Tool wear [min]" id="Tool wear [min]"placeholder="Tool wear [min]">
+            <input type="number" name="TWF" id="TWF"placeholder="TWF">
+            <input type="number" name="HDF" id="HDF"placeholder="HDF">
+            <input type="number" name="PWF" id="PWF"placeholder="PWF">
+            <input type="number" name="OSF" id="OSF"placeholder="OSF">
+            <input type="number" name="RNF" id="RNF"placeholder="RNF">
+
+</select>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
